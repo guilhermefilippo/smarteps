@@ -395,6 +395,18 @@
             margin-bottom: 20px;
         }
 
+        .partnership-icon img {
+            max-width: 120px;
+            max-height: 80px;
+            object-fit: contain;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .partnership-card:hover .partnership-icon img {
+            transform: scale(1.05);
+        }
+
         /* Projects Section */
         .projects-section {
             padding: 80px 0;
@@ -722,55 +734,77 @@
 
         .modal-content {
             position: relative;
-            width: 800px;
+            max-width: 90vw;
+            max-height: 90vh;
             margin: auto;
             top: 50%;
             transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             animation: zoomIn 0.3s ease;
+            background-color: rgba(0, 0, 0, 0.1);
         }
 
         .modal-image {
-            width: 800px;
-            height: 600px;
-            object-fit: cover;
+            max-width: 100%;
+            max-height: 75vh;
+            margin-top: 5px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
             box-shadow: 0 0 50px rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
         }
 
         .modal-close {
-            position: absolute;
-            top: -50px;
-            right: 0;
+            position: fixed;
+            top: 20px;
+            right: 30px;
             color: white;
             font-size: 3rem;
             font-weight: bold;
             cursor: pointer;
             transition: all 0.3s ease;
-            z-index: 10000;
+            z-index: 10001;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
         }
 
         .modal-close:hover {
             color: #ff6b6b;
+            background: rgba(0, 0, 0, 0.7);
             transform: scale(1.1);
         }
 
         .modal-info {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(0, 0, 0, 0.7);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 20px;
-            margin-top: 20px;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 5px;
             text-align: center;
+            max-width: 90%;
+            border-radius: 10px;
         }
 
         .modal-info h4 {
-            color: gray;
+            color: white;
             font-size: 1.5rem;
             margin-bottom: 10px;
             font-weight: 600;
         }
 
         .modal-info p {
-            color: gray; //rgba(255, 255, 255, 0.9);
+            color: rgba(255, 255, 255, 0.9);
             font-size: 1rem;
             line-height: 1.6;
             margin: 0;
@@ -778,10 +812,10 @@
 
         /* Navigation arrows */
         .modal-nav {
-            position: absolute;
+            position: fixed;
             top: 50%;
             transform: translateY(-50%);
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(0, 0, 0, 0.5);
             border: none;
             color: white;
             font-size: 2rem;
@@ -790,10 +824,11 @@
             border-radius: 50%;
             transition: all 0.3s ease;
             backdrop-filter: blur(10px);
+            z-index: 10000;
         }
 
         .modal-nav:hover {
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(0, 0, 0, 0.7);
             transform: translateY(-50%) scale(1.1);
         }
 
@@ -813,24 +848,31 @@
         @keyframes zoomIn {
             from {
                 opacity: 0;
-                transform: translateY(-50%) scale(0.8);
+                transform: scale(0.8);
             }
             to {
                 opacity: 1;
-                transform: translateY(-50%) scale(1);
+                transform: scale(1);
             }
         }
 
         /* Responsive */
         @media (max-width: 768px) {
             .modal-content {
-                max-width: 95%;
-                max-height: 85%;
+                max-width: 95vw;
+                max-height: 85vh;
+            }
+
+            .modal-image {
+                max-height: 60vh;
             }
 
             .modal-close {
-                top: -40px;
+                top: 15px;
+                right: 15px;
                 font-size: 2rem;
+                width: 50px;
+                height: 50px;
             }
 
             .modal-nav {
@@ -844,6 +886,20 @@
 
             .modal-next {
                 right: 15px;
+            }
+
+            .modal-info {
+                padding: 15px;
+                margin-top: 15px;
+                max-width: 95%;
+            }
+
+            .modal-info h4 {
+                font-size: 1.2rem;
+            }
+
+            .modal-info p {
+                font-size: 0.9rem;
             }
         }
     </style>
@@ -1025,7 +1081,7 @@
                 <div class="patent-badge">
                     <i class="fas fa-certificate me-2"></i>PATENTE REQUERIDA
                 </div>
-                <h2 class="text-white">SHAFT EM Painel de Fechamento Hidráulico Modular EPS</h2>
+                <h2 class="text-white">SHAFT - Painel de Fechamento Hidráulico Modular em EPS</h2>
                 <p class="text-white">Sistema revolucionário Plug'n'Play para instalações hidráulicas</p>
             </div>
 
@@ -1074,7 +1130,7 @@
     <section class="innovation-section section-padding">
         <div class="container">
             <div class="innovation-content">
-                <h2>Inovação Revolucionária</h2>
+                <h2>Shafts com Criatividade, Inovação e Tecnologia</h2>
                 <p>
                     A tecnologia de shafts em EPS já é utilizada há anos na construção civil, mas a Smart EPS revolucionou essa
                     concepção com um sistema inovador Plug'n'Play, cuja patente já foi requerida.
@@ -1110,7 +1166,7 @@
 
             <div class="benefit-comparison">
                 <div class="comparison-card smart-eps">
-                    <h4><i class="fas fa-clock me-2"></i>ECONOMIA EM TEMPO DE INSTALAÇÃO</h4>
+                    <h4><i class="fas fa-clock me-2"></i> ECONOMIA COMPROVADA EM TEMPO DE INSTALAÇÃO</h4>
                     <ul class="benefit-list">
                         <li><i class="fas fa-check"></i>Shaft em EPS: Instalado em até 90% menos tempo</li>
                         <li><i class="fas fa-check"></i>Sistema Plug'n'Play revolucionário</li>
@@ -1120,7 +1176,7 @@
                 </div>
 
                 <div class="comparison-card">
-                    <h4><i class="fas fa-tools me-2"></i>Shaft Convencional</h4>
+                    <h4><i class="fas fa-tools me-2"></i> Shaft Convencional</h4>
                     <ul class="benefit-list">
                         <li><i class="fas fa-times text-danger me-2"></i>Demanda estrutura metálica/alvenaria</li>
                         <li><i class="fas fa-times text-danger me-2"></i>Instalação hidráulica complexa</li>
@@ -1133,7 +1189,7 @@
             <div class="row mt-5">
                 <div class="col-lg-6 mb-4">
                     <div class="eps-card">
-                        <h4><i class="fas fa-dollar-sign me-2"></i>ECONOMIA EM CUSTOS</h4>
+                        <h4><i class="fas fa-dollar-sign me-2"></i> ECONOMIA REAL EM CUSTOS</h4>
                         <ul class="benefit-list">
                             <li><i class="fas fa-check text-success me-2"></i>Menos Mão de Obra Especializada</li>
                             <li><i class="fas fa-check text-success me-2"></i>Menos Resíduos</li>
@@ -1144,7 +1200,7 @@
                 </div>
                 <div class="col-lg-6 mb-4">
                     <div class="eps-card">
-                        <h4><i class="fas fa-star me-2"></i>DIFERENCIAL SMART EPS</h4>
+                        <h4><i class="fas fa-star me-2"></i> DIFERENCIAL SMART EPS</h4>
                         <p>
                             Os shafts Plug'n'Play em EPS oferecem vantagens técnicas e econômicas em relação aos
                             shafts convencionais. Pré-fabricados e prontos para instalação, reduzem o tempo de montagem. 
@@ -1166,42 +1222,42 @@
 
             <div class="technical-grid">
                 <div class="technical-card">
-                    <h5><i class="fas fa-paint-brush me-2"></i>Aplicação do Revestimento</h5>
+                    <h5><i class="fas fa-paint-brush me-2"></i> Aplicação do Revestimento</h5>
                     <p>O revestimento pode ser aplicado diretamente no Shaft Plug'n'Play da Smart EPS. Indicamos argamassa pronta para uso ou aditivo para incorporar à argamassa colante.</p>
                 </div>
 
                 <div class="technical-card">
-                    <h5><i class="fas fa-feather-alt me-2"></i>Leveza</h5>
+                    <h5><i class="fas fa-feather-alt me-2"></i> Leveza</h5>
                     <p>O EPS é extremamente leve, facilitando o transporte e manuseio no local da obra. Enorme redução de peso em relação ao convencional na fundação e estrutura.</p>
                 </div>
 
                 <div class="technical-card">
-                    <h5><i class="fas fa-recycle me-2"></i>Menor Geração de Resíduos</h5>
+                    <h5><i class="fas fa-recycle me-2"></i> Menor Geração de Resíduos</h5>
                     <p>A utilização de shafts em EPS não geram resíduos, descartando a necessidade de caçambas e custos associados.</p>
                 </div>
 
                 <div class="technical-card">
-                    <h5><i class="fas fa-leaf me-2"></i>Sustentabilidade</h5>
+                    <h5><i class="fas fa-leaf me-2"></i> Sustentabilidade</h5>
                     <p>O EPS é reciclável e sua aplicação contribui para práticas construtivas mais sustentáveis. Os componentes do shaft da Smart EPS são recicláveis, inclusive as placas de reforço.</p>
                 </div>
 
                 <div class="technical-card">
-                    <h5><i class="fas fa-umbrella me-2"></i>Resistência à Umidade</h5>
+                    <h5><i class="fas fa-umbrella me-2"></i> Resistência à Umidade</h5>
                     <p>Diferentemente do método tradicional, o EPS é impermeável, permitindo a instalação dos shafts mesmo em condições de chuva, sem comprometer a qualidade.</p>
                 </div>
 
                 <div class="technical-card">
-                    <h5><i class="fas fa-broom me-2"></i>Limpeza na Obra</h5>
+                    <h5><i class="fas fa-broom me-2"></i> Limpeza na Obra</h5>
                     <p>A instalação de shaft da Smart EPS é limpa, eliminando poeira e detritos, contribuindo para um ambiente de trabalho mais seguro e organizado.</p>
                 </div>
 
                 <div class="technical-card">
-                    <h5><i class="fas fa-fire-extinguisher me-2"></i>EPS Anti-Chama</h5>
+                    <h5><i class="fas fa-fire-extinguisher me-2"></i> EPS Anti-Chama</h5>
                     <p>Atende às normas da construção civil, garantindo a segurança da edificação com propriedades retardantes de chama.</p>
                 </div>
 
                 <div class="technical-card">
-                    <h5><i class="fas fa-certificate me-2"></i>Certificações Ambientais</h5>
+                    <h5><i class="fas fa-certificate me-2"></i> Certificações Ambientais</h5>
                     <p>Empresas que adotam materiais recicláveis podem melhorar sua imagem corporativa e atender a critérios de certificações ambientais.</p>
                 </div>
             </div>
@@ -1219,7 +1275,7 @@
             <div class="partnership-grid">
                 <div class="partnership-card">
                     <div class="partnership-icon">
-                        <i class="fas fa-recycle"></i>
+                        <img src="https://i.imgur.com/CViaCGd.jpeg" alt="Cooperlagos" style="max-width: 120px; max-height: 80px; object-fit: contain;">
                     </div>
                     <h4>Cooperlagos</h4>
                     <p>
@@ -1230,7 +1286,7 @@
 
                 <div class="partnership-card">
                     <div class="partnership-icon">
-                        <i class="fas fa-graduation-cap"></i>
+                        <img src="https://i.imgur.com/LzqLHMj.png" alt="SENAI & SEBRAE" style="max-width: 120px; max-height: 80px; object-fit: contain;">
                     </div>
                     <h4>SENAI & SEBRAE</h4>
                     <p>
@@ -1244,9 +1300,9 @@
 
             <div class="text-center mt-4">
                 <p class="lead">
-                    Essa parceria fortalece nossa capacidade de competir e se destacar, garantindo que
+                    As parcerias fortalecem nossa capacidade de competir e nos destacar, garantindo que
                     ofereçamos produtos cada vez mais inovadores e de qualidade para nossos clientes. 
-                    A mentoria é um investimento valioso no futuro da SmartEPS!
+                    As mentorias são investimentos valiosos para o futuro da SmartEPS!
                 </p>
             </div>
         </div>
@@ -1264,7 +1320,7 @@
             <div class="row">
 
                 <div class="col-lg-4 col-md-6 p-4">
-                    <div class="project-card" onclick="openModal(3)">
+                    <div class="project-card" onclick="openModal(0)">
                         <div class="project-image" style="background-image: url('https://i.imgur.com/fE6klGE.jpeg');">
                             <div class="project-overlay">
                                 <i class="fas fa-search-plus text-white" style="font-size: 2rem;"></i>
@@ -1278,7 +1334,7 @@
                 </div>
 
                 <div class="col-lg-4 col-md-6 p-4">
-                    <div class="project-card" onclick="openModal(4)">
+                    <div class="project-card" onclick="openModal(1)">
                         <div class="project-image" style="background-image: url('https://i.imgur.com/gDDMFqn.jpeg');">
                             <div class="project-overlay">
                                 <i class="fas fa-search-plus text-white" style="font-size: 2rem;"></i>
@@ -1292,7 +1348,7 @@
                 </div>
 
                 <div class="col-lg-4 col-md-6 p-4">
-                    <div class="project-card" onclick="openModal(5)">
+                    <div class="project-card" onclick="openModal(2)">
                         <div class="project-image" style="background-image: url('https://i.imgur.com/uKiIX0Y.jpeg');">
                             <div class="project-overlay">
                                 <i class="fas fa-search-plus text-white" style="font-size: 2rem;"></i>
@@ -1306,7 +1362,7 @@
                 </div>
 
                 <div class="col-lg-4 col-md-6 p-4">
-                    <div class="project-card" onclick="openModal(6)">
+                    <div class="project-card" onclick="openModal(3)">
                         <div class="project-image" style="background-image: url('https://i.imgur.com/btdSpDq.jpeg');">
                             <div class="project-overlay">
                                 <i class="fas fa-search-plus text-white" style="font-size: 2rem;"></i>
@@ -1320,7 +1376,7 @@
                 </div>
 
                 <div class="col-lg-4 col-md-6 p-4">
-                    <div class="project-card" onclick="openModal(7)">
+                    <div class="project-card" onclick="openModal(4)">
                         <div class="project-image" style="background-image: url('https://i.imgur.com/5YW8Deg.jpeg');">
                             <div class="project-overlay">
                                 <i class="fas fa-search-plus text-white" style="font-size: 2rem;"></i>
@@ -1334,7 +1390,7 @@
                 </div>
 
                 <div class="col-lg-4 col-md-6 p-4">
-                    <div class="project-card" onclick="openModal(8)">
+                    <div class="project-card" onclick="openModal(5)">
                         <div class="project-image" style="background-image: url('https://i.imgur.com/8yY5UHx.jpeg');">
                             <div class="project-overlay">
                                 <i class="fas fa-search-plus text-white" style="font-size: 2rem;"></i>
@@ -1394,18 +1450,11 @@
                     <h4>SmartEPS</h4>
                     <p>Startup no ramo da engenharia com sede no Noroeste Paulista, especializada em soluções inovadoras com EPS para construção civil e projetos customizados.</p>
                     <div class="social-icons">
-                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                        <!-- <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a> -->
+                        <a href="https://www.instagram.com/smart.eps" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <!-- <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a> -->
+                        <a href="https://wa.me/5517996187707?text=Olá! Gostaria de falar sobre meu projeto." class="social-icon"><i class="fab fa-whatsapp"></i></a>
                     </div>
-                </div>
-
-                <div class="footer-section">
-                    <h4>Contato</h4>
-                    <p><i class="fas fa-phone me-2"></i> (17) 98150-1170 / (17) 99618-7707</p>
-                    <p><i class="fas fa-envelope me-2"></i> contato@smarteps.com.br</p>
-                    <p><i class="fas fa-map-marker-alt me-2"></i> Mirassol - SP</p>
                 </div>
 
                 <div class="footer-section">
@@ -1425,10 +1474,18 @@
                     <p><strong>Sábado:</strong><br>Fechado</p>
                     <p><strong>Domingo:</strong><br>Fechado</p>
                 </div>
+
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <p><i class="fas fa-phone me-2"></i> (17) 98150-1170 / (17) 99618-7707</p>
+                    <p><i class="fas fa-envelope me-2"></i> contato@smarteps.com.br</p>
+                    <p><i class="fas fa-map-marker-alt me-2"></i> Mirassol - SP</p>
+                </div>
+
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2025 SmartEPS. Todos os direitos reservados. | Desenvolvido com tecnologia e inovação.</p>
+                <p>&copy; 2025 SmartEPS - Todos os direitos reservados. | Desenvolvido com tecnologia e inovação.</p>
             </div>
         </div>
     </footer>
@@ -1441,21 +1498,6 @@
 
         // Dados dos projetos
         const projects = [
-            {
-                "image": "https://i.imgur.com/miUo78F.jpeg",
-                "title": "Painel EPS Ventilado Sob Medida",
-                "description": "Painéis em EPS fabricados sob encomenda, com recortes de alta precisão para dutos de ar, garantindo isolamento térmico superior e instalação ágil em obras residenciais ou comerciais."
-            },
-            {
-                "image": "https://i.imgur.com/jvXTSXy.jpeg",
-                "title": "Usinagem CNC de EPS com Ultra-Precisão",
-                "description": "Cortes milimétricos em EPS utilizando tecnologia CNC de 5 eixos, proporcionando acabamento impecável para protótipos arquitetônicos e componentes industriais de alta exigência."
-            },
-            {
-                "image": "https://i.imgur.com/RefkIBb.jpeg",
-                "title": "Sistema Shaft EPS com Bancada Integrada",
-                "description": "Estrutura em EPS leve e resistente à umidade, pronta para receber bancada e instalações hidráulicas, reduzindo prazos de obra e custos de mão-de-obra."
-            },
             {
                 "image": "https://i.imgur.com/fE6klGE.jpeg",
                 "title": "Shaft EPS para Passagem de Tubulações",
