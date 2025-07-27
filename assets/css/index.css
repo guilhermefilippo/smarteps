@@ -885,3 +885,42 @@ html {
     background: rgba(255, 255, 255, 0.98);
     box-shadow: 0 4px 20px rgba(0,0,0,0.15);
 }
+
+.language-selector {
+    position: fixed;
+    top: 90px;
+    right: 20px;
+    z-index: 1001;
+    display: flex;
+    gap: 10px;
+}
+
+.language-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.language-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+
+.language-btn.brazil {
+    background-image: url('https://flagcdn.com/w40/br.png');
+}
+
+.language-btn.usa {
+    background-image: url('https://flagcdn.com/w40/us.png');
+}
+
+.language-btn.active {
+    border-color: #fbbf24;
+    box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.3);
+}

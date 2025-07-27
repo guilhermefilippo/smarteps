@@ -50,9 +50,12 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#projects">Projetos Realizados</a>
                 </li>
-                <!-- Botão de destaque -->
+                <!-- Seletor de idiomas -->
                 <li class="nav-item ml-lg-3">
-                    <a href="#contact" class="btn btn-outline-primary">Entre em Contato</a>
+                    <div class="d-flex align-items-center">
+                        <a href="index.html" class="language-btn brazil active me-2" title="Português"></a>
+                        <a href="index-en.html" class="language-btn usa" title="English"></a>
+                    </div>
                 </li>
             </ul>
         </div>
@@ -374,6 +377,10 @@
                     <h5><i class="fas fa-certificate me-2"></i> Certificações Ambientais</h5>
                     <p>Empresas que adotam materiais recicláveis podem melhorar sua imagem corporativa e atender a critérios de certificações ambientais.</p>
                 </div>
+                <div class="technical-card">
+                    <h5><i class="fas fa-screwdriver me-2"></i> Encaixe Rápido</h5>
+                    <p>Todos os projetos são desenhados para que sejam encaixados perfeitamente para agilizar o processo de instalação.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -608,6 +615,57 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/index.js"></script>
+    <script>
+        
+        // Dados dos projetos
+        const projects = [
+            {
+                "image": "https://i.imgur.com/miUo78F.jpeg",
+                "title": "Painel EPS Ventilado Sob Medida",
+                "description": "Painéis em EPS fabricados sob encomenda, com recortes de alta precisão para dutos de ar, garantindo isolamento térmico superior e instalação ágil em obras residenciais ou comerciais."
+            },
+            {
+                "image": "https://i.imgur.com/jvXTSXy.jpeg",
+                "title": "Usinagem CNC de EPS com Ultra-Precisão",
+                "description": "Cortes milimétricos em EPS utilizando tecnologia CNC de 5 eixos, proporcionando acabamento impecável para protótipos arquitetônicos e componentes industriais de alta exigência."
+            },
+            {
+                "image": "https://i.imgur.com/RefkIBb.jpeg",
+                "title": "Sistema Shaft EPS com Bancada Integrada",
+                "description": "Estrutura em EPS leve e resistente à umidade, pronta para receber bancada e instalações hidráulicas, reduzindo prazos de obra e custos de mão-de-obra."
+            },
+            {
+                "image": "https://i.imgur.com/fE6klGE.jpeg",
+                "title": "Shaft EPS para Passagem de Tubulações",
+                "description": "Solução completa de Shaft em EPS com canais integrados para elétrica e hidráulica, entregando acabamento limpo, isolamento acústico e conformidade com normas comerciais."
+            },
+            {
+                "image": "https://i.imgur.com/gDDMFqn.jpeg",
+                "title": "Caixa Shaft Modular em EPS",
+                "description": "Módulos pré-usinados em EPS que se encaixam sem emendas, otimizando o espaço técnico e simplificando a manutenção das redes prediais."
+            },
+            {
+                "image": "https://i.imgur.com/uKiIX0Y.jpeg",
+                "title": "Shaft EPS com Nicho Reforçado para Válvulas",
+                "description": "Estrutura em EPS com nichos preparados para registros e conexões, oferecendo leveza, durabilidade e resistência ao fogo em áreas molhadas."
+            },
+            {
+                "image": "https://i.imgur.com/btdSpDq.jpeg",
+                "title": "Shaft EPS Pré-Reboco",
+                "description": "Painéis Shaft em EPS com superfície pronta para aplicação direta de argamassa, acelerando etapas de acabamento e elevando a produtividade no canteiro."
+            },
+            {
+                "image": "https://i.imgur.com/5YW8Deg.jpeg",
+                "title": "Shaft EPS Classe A para Ambientes Hospitalares",
+                "description": "Sistema em EPS sanitário, antifungo e antibactéria, ideal para instalações médicas que exigem alta higiene e fácil limpeza."
+            },
+            {
+                "image": "https://i.imgur.com/8yY5UHx.jpeg",
+                "title": "Shaft EPS Slim para Retrofit",
+                "description": "Solução ultrafina em EPS que permite passagem de novas instalações sem demolições, preservando isolamento térmico e acústico em projetos de modernização."
+            }
+        ];
+    </script>
 
     <!-- WhatsApp Float Button -->
     <a href="https://wa.me/5517996187707?text=Olá! Gostaria de falar sobre meu projeto." class="whatsapp-float" target="_blank">
