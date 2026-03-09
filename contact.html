@@ -47,8 +47,8 @@
                 <!-- Seletor de idiomas -->
                 <li class="nav-item ml-lg-3">
                     <div class="d-flex align-items-center">
-                        <a href="index.html" class="language-btn brazil me-2" title="Português"></a>
-                        <a href="index-en.html" class="language-btn usa active" title="English"></a>
+                        <a href="contato.html" class="language-btn brazil me-2" title="Português"></a>
+                        <a href="contact.html" class="language-btn usa active" title="English"></a>
                     </div>
                 </li>
             </ul>
@@ -63,72 +63,22 @@
         </div>
     </header>
 
-    <!-- Hero Section with Video -->
-    <section class="hero-section">
-        <video class="hero-video" autoplay muted loop playsinline>
-            <source src="assets/images/smarteps_video_home.mp4" type="video/mp4">
-            Seu navegador não suporta vídeos HTML5.
-        </video>
-        <div class="hero-overlay"></div>
+    <!-- Contact Form Section -->
+    <section style="padding-top: 120px;" class="contact-section" id="contact">
         <div class="container">
-            <div class="hero-content">
-                <h1>Innovative EPS Solutions</h1>
-                <p>Based in Northwest São Paulo, Smart EPS is an engineering startup that brings practical and sustainable solutions to your construction. <br>We are specialists in EPS Shaft.</p>
-                <a href="contact.html" class="btn-cta">
-                    <i class="fas fa-rocket me-2"></i>
-                    Contact Us Now
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Shaft Product Section -->
-    <section class="shaft-product-section section-padding" id="shaft-product">
-        <div class="container">
-            <div class="section-title">
-                <div class="patent-badge">
-                    <i class="fas fa-certificate me-2"></i> PATENT PENDING
-                </div>
-                <h2 class="text-white">SHAFT - Modular Hydraulic Closure Panel in EPS</h2>
-                <p class="text-white">Revolutionary Plug'n'Play system for hydraulic installations</p>
+            <div class="section-title text-center mb-5">
+                <h2 class="text-white">Contact Us</h2>
+                <p class="text-white">Contact us and discover how we can help your project</p>
             </div>
 
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <div class="text-center mb-4">
-                        <p class="lead text-white">
-                            Made of high-density EPS, it offers high durability and resistance. 
-                            Ready for installation, with built-in hydraulic system.
-                        </p>
-                        <p class="text-white">
-                            Allows direct application of the coating, simplifying installation, eliminating the plastering step. 
-                            Produced to measure for your project. Smart EPS: clean, practical and sustainable construction.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-features">
-                <div class="feature-item">
-                    <i class="fas fa-plug"></i>
-                    <h5>Plug'n'Play System</h5>
-                    <p>Extremely fast and efficient installation, reducing labor costs</p>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-tint"></i>
-                    <h5>Integrated Hydraulic System</h5>
-                    <p>Compatible with PVC, CPVC and PEX for cold and hot water</p>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-ruler"></i>
-                    <h5>Custom Made</h5>
-                    <p>Produced specifically for each project with millimetric precision</p>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-shield-alt"></i>
-                    <h5>High Durability</h5>
-                    <p>57mm EPS offers superior resistance and long service life</p>
-                </div>
+            <div class="contact-iframe-container">
+                <iframe  
+                    src="https://acesso.sistemaparagestao.com.br/formulario/empresa/225145b7-e79e-11ea-84ce-0237aeab3997/formulario/d8913cb7-dd8e-11ee-bb6d-0050568d17bd?sem=true"
+                    class="contact-iframe"
+                    title="Formulário de Contato SmartEPS"
+                    scrolling="no"
+                    style="overflow: hidden;">
+                </iframe>
             </div>
         </div>
     </section>
@@ -186,10 +136,27 @@
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/script.js"></script>
 
+
     <!-- WhatsApp Float Button -->
     <a href="https://wa.me/5517996187707?text=Olá! Gostaria de falar sobre meu projeto." class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
+    <script>
+        // Receives message from iframe containing the dynamic updated height
+        window.addEventListener('message', function(event) {
+            if (event.data && event.data.height) {
+                var iframe = document.querySelector('.contact-iframe');
+                if (iframe) {
+                    iframe.style.height = event.data.height + 'px';
+                }
+            }
+        });
+        
+        // Optional: Actively asks for height assuming iframe supports it
+        document.querySelector('.contact-iframe').onload = function() {
+            this.contentWindow.postMessage({ iframe_height: true }, '*');
+        };
+    </script>
 </body>
 </html>
